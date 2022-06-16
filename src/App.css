@@ -1,6 +1,7 @@
 h1 {
   text-align: center;
   background-color: #282c34;
+  color: white;
   height: 100px;
   display: flex;
   align-items: center;
@@ -18,14 +19,6 @@ body,
   display: flex;
 }
 
-.navBar {
-  background-color: aliceblue;
-  display: flex;
-  align-items: center; justify-content: center;
-  min-width: 300px;
-  max-width: 300px;
-}
-
 .mainBody{
   display: flex;
   height: 100%;
@@ -34,23 +27,66 @@ body,
   
 }
 
+/* -------------------------- CV */
+
 .mainBody .CV {
   margin-top: 10px;
-  width: 400px;
-  height: 400px;
-  background-color: #282c34;
-  color: white;
-  font-size: 40px;
+  width: 450px;
+  height: 500px;
+  background-color: white;
+  color: black;
   display: flex;
-  justify-content: center;
+  flex-flow: column;
+  align-content: center;
+  padding: 10px;
 }
 
+/* ---------------- name */
 .name-user {
-  background-color: wheat;
-  width: 60%;
-  height: 50px;
-  color: #282c34;
-  font: 10px;
+  display: flex;
+  align-items: center; justify-content: center;
+  text-align: center;
+  height: 35px;
+  font-size: 20px;
+  margin-top: 30px;
+  background-color: #282c34;
+}
+
+/*--------- personal data */
+.personal-data {
+  font-size: 10px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
   text-align: center;
 }
 
+/* ----------------------------- navbar */
+form {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+}
+.DIV-input-and-label{
+  display: flex;
+  flex-flow: column;
+  justify-items: center; align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+
+input {
+  height: 20px;
+  width: 90%;
+  text-align: center;
+}
+
+.navBar {
+  background-color: aliceblue;
+  display: flex;
+  align-items: center; justify-content: center;
+  min-width: 300px;
+  max-width: 300px;
+}

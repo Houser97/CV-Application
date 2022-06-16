@@ -10,6 +10,9 @@ class App extends React.Component {
     this.state = {
       title: 'CV Application',
       name: "",
+      career:"",
+      cel:"",
+      email:"",
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -18,7 +21,7 @@ class App extends React.Component {
 
   handleChange(e) {
     this.setState({
-      name: e.target.value,
+      [e.target.id]: e.target.value,
     })
   }
 
@@ -28,14 +31,15 @@ class App extends React.Component {
 
 
   render(){
-    const {title, name} = this.state;
+    const {title, name, career, cel, email} = this.state;
+    /*const {career, cel, email} = this.state.personalData;*/
 
     return (
       <div className='bodyApp'>
         <Title title={title}/>
         <div className='navBar-and-mainBody'>
-          <NavBar name={name} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
-          <MainBody name={name}/>
+          <NavBar name={name} cel={cel} career={career} email={email} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+          <MainBody name={name} cel={cel} career={career} email={email}/>
         </div>
       </div>
     );

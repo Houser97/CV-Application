@@ -1,10 +1,22 @@
 const NavBar = (props) => {
-    const {name} = props;
+    const {name, career, cel, email} = props;
     return (
         <form className="navBar" onSubmit={props.handleSubmit}>
-            <div>
+            <div className="DIV-input-and-label">
                 <label htmlFor="name">Name</label>
                 <input name="name" id="name" value={name} onChange={props.handleChange}></input>
+            </div>
+            <div className="DIV-input-and-label">
+                <label htmlFor="career">Career</label>
+                <input name="career" id="career" value={career} onChange={props.handleChange}></input>
+            </div>
+            <div className="DIV-input-and-label">
+                <label htmlFor="cel">Celphone number</label>
+                <input name="cel" id="cel" value={cel} onChange={props.handleChange}></input>
+            </div>
+            <div className="DIV-input-and-label">
+                <label htmlFor="email">E-mail</label>
+                <input name="email" id="email" value={email} onChange={props.handleChange}></input>
             </div>
         </form>
     )
