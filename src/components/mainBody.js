@@ -2,7 +2,7 @@ import PersonalData from './personalData';
 import Skills from './skills';
 
 const MainBody = (props) => {
-    const {name, career, cel, email, skills} = props;
+    const {name, career, cel, email, skills, difficulty} = props;
     return (
         <div className="mainBody">
             <div className="CV">
@@ -11,7 +11,7 @@ const MainBody = (props) => {
                 <div className='DIV-skills-and-experience'>
                     <div className='skills'>
                         Skills
-                        <Skills skills={skills} deleteSkill={props.deleteSkill} />
+                        <Skills skills={skills} deleteSkill={props.deleteSkill} difficulty={difficulty}/>
                     </div>
                     <div className='experience'>
                         Experience

@@ -19,14 +19,8 @@ const NavBar = (props) => {
                     <label htmlFor="email">E-mail</label>
                     <input name="email" id="email" value={email} onChange={props.handleChange}></input>
                 </div>
+                <div className="addNewSkill" onClick={props.openSkillForm}>Add Skill</div>
             </form>
-
-            <form onSubmit={props.handleSubmitSkill}>
-            <div className="DIV-input-and-label">
-                    <label htmlFor="skill">Skill</label>
-                    <input name="skill" id="skill"></input>
-                </div>
-            </form> 
         </div>
     )
 }
