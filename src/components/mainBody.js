@@ -3,7 +3,7 @@ import Skills from './skills';
 import Experience from './experience';
 
 const MainBody = (props) => {
-    const {name, career, cel, email, skills, difficulty,titleActivity, year, company, description } = props;
+    const {name, career, cel, email, skills, difficulty,titleActivity, year, year2, company, description } = props;
     return (
         <div className="mainBody">
             <div className="CV">
@@ -23,7 +23,7 @@ const MainBody = (props) => {
                             Experience
                         </div>
                         <ul className="experiences">
-                            <Experience titleActivity ={titleActivity} year = {year} company = {company} description ={description} />
+                            <Experience titleActivity ={titleActivity} year = {year} company = {company} description ={description} year2 = {year2} />
                         </ul>
                     </div>
                 </div>
