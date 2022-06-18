@@ -24,7 +24,7 @@ const MainBody = (props) => {
                         </div>
                         <ul className="experiences">
                             <Experience titleActivity ={titleActivity} year = {year} company = {company} description ={description} year2 = {year2} 
-                            deleteExperience = {props.deleteExperience} />
+                            deleteExperience = {props.deleteExperience} openEditExperienceForm = {props.openEditExperienceForm}/>
                         </ul>
                     </div>
                 </div>
