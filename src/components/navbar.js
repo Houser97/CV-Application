@@ -1,5 +1,5 @@
 const NavBar = (props) => {
-    const {name, career, cel, email, skills} = props;
+    const {name, career, cel, email} = props;
     return (
         <div className="navBar">
             <form onSubmit={props.handleSubmit}>
@@ -20,6 +20,7 @@ const NavBar = (props) => {
                     <input name="email" id="email" value={email} onChange={props.handleChange}></input>
                 </div>
                 <div className="addNewSkill" onClick={props.openSkillForm}>Add Skill</div>
+                <div className="addNewExperience" onClick={props.openExperienceForm}>Add Experience</div>
             </form>
         </div>
     )
