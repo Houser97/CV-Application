@@ -2,7 +2,7 @@ const NavBar = (props) => {
     const {name, career, cel, email} = props;
     return (
         <div className="navBar">
-            <form onSubmit={props.handleSubmit}>
+            <form onSubmit={props.handleSubmit} id="form-navbar">
                 <div className="DIV-input-and-label">
                     <label htmlFor="name">Name</label>
                     <input name="name" id="name" value={name} onChange={props.handleChange}></input>

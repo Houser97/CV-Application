@@ -35,25 +35,43 @@ class App extends React.Component {
     this.handleSubmitExperience = this.handleSubmitExperience.bind(this);
     this.navBarDisplay = this.navBarDisplay.bind(this);
     this.navBarDisplayNot = this.navBarDisplayNot.bind(this);
+    this.closeSkillForm = this.closeSkillForm.bind(this);
+    this.closeExperienceForm = this.closeExperienceForm.bind(this);
+  }
+
+  closeSkillForm(e) {
+    const skillsForm = document.querySelector(".DIV-skillsForm");
+    skillsForm.style.display = "none"
+  }
+
+  closeExperienceForm(e){
+    const experienceForm = document.querySelector(".DIV-experienceForm");
+    experienceForm.style.display = "none"
   }
 
   navBarDisplay(e){
     const navBar = document.querySelector(".navBar");
-    navBar.style.display = "flex";
+    navBar.style.width = "380px";
+    navBar.style.padding = "10px"
     const openNavbar = document.querySelector(".menu-button-closed");
     openNavbar.style.display = "none"
     const closeNavbar = document.querySelector(".menu-button-opened");
     closeNavbar.style.display = "flex"
+    const formNavBar = document.getElementById("form-navbar");
+    formNavBar.style.display = "flex"
     console.log("click")
   }
 
   navBarDisplayNot(e){
     const navBar = document.querySelector(".navBar");
-    navBar.style.display = "none";
+    navBar.style.width = "0px";
+    navBar.style.padding = "0px"
     const closeNavbar = document.querySelector(".menu-button-opened");
     closeNavbar.style.display = "none"
     const openNavbar = document.querySelector(".menu-button-closed");
     openNavbar.style.display = "flex"
+    const formNavBar = document.getElementById("form-navbar");
+    formNavBar.style.display = "none"
   }
 
   handleSubmitExperience(e){
@@ -150,8 +168,8 @@ class App extends React.Component {
             <MainBody name={name} cel={cel} career={career} email={email} 
             skills = {skills} deleteSkill ={this.deleteSkill} difficulty={difficulty}
             titleActivity ={titleActivity} year = {year} company = {company} description ={description} year2 = {year2}/>
-            <SkillsForm handleSubmitSkill={this.handleSubmitSkill} />
-            <ExperienceForm handleSubmitExperience = {this.handleSubmitExperience} />
+            <SkillsForm handleSubmitSkill={this.handleSubmitSkill} closeSkillForm = {this.closeSkillForm} />
+            <ExperienceForm handleSubmitExperience = {this.handleSubmitExperience} closeExperienceForm = {this.closeExperienceForm} />
           </div>
         </div>  
       </div>

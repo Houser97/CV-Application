@@ -35,11 +35,11 @@ h1 {
 }
 
 .menu-button-opened {
-  display: none;
+  display: flex;
 }
 
 .menu-button-closed {
-  display: flex;
+  display: none;
 }
 
 
@@ -149,7 +149,7 @@ body,
 .singleSkill .bar {
   display: flex;
   height: var(--bar-height);
-  width: 100%;
+  width: 85%;
   border-radius: 10px;
   background-color: rgb(138, 138, 138);
   border: 1px solid black;
@@ -194,35 +194,46 @@ body,
 }
 
 #skillsForm {
-  width: 200px;
-  height: 400px;
+  width: 250px;
+  height: 280px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
 }
 
 #submitSkill {
   position: relative;
   padding: 10px 18px;
+  border: none;
   border-radius: 5px;
-  background-color: rgb(36, 36, 172);
+  background-color: rgb(44, 113, 202);
   color: white;
   font-size: 10px;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .addNewSkill {
   background-color: #282c34;
   color: white;
   border: 1px solid black;
-  border-radius: 5px;
-  width: 100px; height: 25px;
+  width: 30%; height: 25px;
+  display: flex;
+  justify-content: center; align-items: center;
+  cursor: pointer;
+}
+
+.addNewExperience {
+  width: 50%; height: 25px;
+  border: 1px black solid;
   display: flex;
   justify-content: center; align-items: center;
   cursor: pointer;
 }
 
 #submitSkill:hover {
-  background-color: rgb(53, 53, 126);
+  background-color: rgb(87, 134, 196);
 }
 
 /*---------------------------------------------------- Experience form */
@@ -241,23 +252,46 @@ body,
 }
 
 #experienceForm {
-  width: 200px;
-  height: 350px;
+  width: 300px;
+  height: 450px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
 }
 
 /* Delete SKills */
 .deleteSkill {
-  border: 1px solid black;
-  font-weight: 600;
-  border-radius: 50%;
-  padding: 1px 3px;
-  background-color: rgb(202, 88, 88);
+  height: 15px;
+  width: 15px;
   right: 0px;
   top: 0px;
   position: absolute;
-  font-size: 10px;
   display: none;
+  cursor: pointer;
 }
+
+.closeSkillsForm {
+  height: 24px;
+  width: 24px;
+  right: 20px;
+  top: 20px;
+  color: rgb(92, 91, 91);
+  position: absolute;
+  display: flex;
+  cursor: pointer;
+}
+
+.closeExperienceForm {
+  height: 24px;
+  width: 24px;
+  right: 20px;
+  top: 20px;
+  color: rgb(92, 91, 91);
+  position: absolute;
+  display: flex;
+  cursor: pointer;
+}
+
 
 .singleSkill:hover > .deleteSkill {
   display: flex;
@@ -266,11 +300,14 @@ body,
 #button-experience {
   position: relative;
   padding: 10px 18px;
+  border: none;
   border-radius: 5px;
-  background-color: rgb(36, 36, 172);
+  background-color: rgb(44, 113, 202);
   color: white;
   font-size: 10px;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 /* ----------------------------- navbar */
@@ -280,8 +317,7 @@ form {
   gap: 15px;
   background-color: aliceblue;
   align-items: center; justify-content: center;
-  min-width: 300px;
-  max-width: 300px;
+  width: 100%;
 }
 
 .DIV-input-and-label{
@@ -302,13 +338,15 @@ input {
 
 .navBar {
   background-color: aliceblue;
-  display: none;
+  display: flex;
   flex-flow: column;
-  align-items: center; justify-content: center;
-  min-width: 300px;
-  max-width: 300px;
+  align-items: center; justify-content: flex-start;
+  width: 370px;
   min-height: 100%;
   gap: 15px;
+  padding: 20px;
+  padding-top: 50px;
+  transition: all 0.3s ease-in-out;
 }
 
 /* ------------ Difficulty list */
@@ -402,4 +440,40 @@ input {
   border-radius: 50%;
   top: -8px;
   left: -3px;
+}
+
+/* ------- DROPDOWN MENU */
+#difficulty {
+  width: 50%;
+  height: 30px;
+  text-align: center;
+  border: 1px solid silver;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+ul {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.select-menu {
+  background-color: #003d83;
+  width: 70%;
+}
+
+.select-menu .select-btn {
+  background-color: #fff;
+}
+
+.select-menu .options {
+  display: block;
+}
+
+.select-menu .options .option {
+  display: flex;
+  align-items: center;
+  
+  cursor: pointer;
+  background-color: #fff;
 }
