@@ -7,15 +7,21 @@ const MainBody = (props) => {
     return (
         <div className="mainBody">
             <div className="CV">
-                <div className="name-user">{name}</div>
-                <PersonalData career={career} cel={cel} email={email} />
+                <div className='DIV-personal-data'>
+                    <div className="name-user">{name}</div>
+                    <PersonalData career={career} cel={cel} email={email} />
+                </div>
                 <div className='DIV-skills-and-experience'>
                     <div className='skills'>
-                        Skills
+                        <div className='skills-and-experience-TITLE'>
+                            Skills
+                        </div>
                         <Skills skills={skills} deleteSkill={props.deleteSkill} difficulty={difficulty}/>
                     </div>
                     <div className='experience'>
-                        Experience
+                        <div className='skills-and-experience-TITLE'>
+                            Experience
+                        </div>
                         <ul className="experiences">
                             <Experience titleActivity ={titleActivity} year = {year} company = {company} description ={description} />
                         </ul>

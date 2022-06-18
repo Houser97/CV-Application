@@ -7,7 +7,7 @@ const Skills = (props) => {
                         <div className='singleSkill' key={iterator.toString()}>
                             {item}
                             <span className='bar'><span className={`Beginner ${difficulty[iterator]}`}></span></span>
-                            <button id={iterator.toString()} onClick={props.deleteSkill}>X</button>
+                            <button id={iterator.toString()} className = "deleteSkill" onClick={props.deleteSkill}>X</button>
                         </div>
 
                 )
