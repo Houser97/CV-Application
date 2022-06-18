@@ -1,13 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+
+:root {
+  --bar-color: #003d83;
+  --bar-height: 2px;
+  --line-experience-color: #003d83: 
+}
+
 h1 {
   text-align: center;
   background-color: #282c34;
   color: white;
-  height: 100px;
+  min-height: 60px;
+  max-height: 60px;
   display: flex;
+  font-family: 'PT Serif', serif;
   align-items: center;
   justify-content: center;
   justify-self: center;
+  position: relative;
 }
+
+.fullheight {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+}
+
+.menu-button-closed, .menu-button-opened {
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  left: 20px;
+  cursor: pointer;
+}
+
+.menu-button-opened {
+  display: none;
+}
+
+.menu-button-closed {
+  display: flex;
+}
+
 
 body, 
 .bodyApp,
@@ -17,6 +51,7 @@ body,
 
 .navBar-and-mainBody {
   display: flex;
+  position: relative; /* Ayuda a que los FORMS emergente se expandan en altura, ya que este DIV es el padre de ellos */
 }
 
 .mainBody{
@@ -24,6 +59,8 @@ body,
   height: 100%;
   width: 100%;
   justify-content: center; align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
   
 }
 
@@ -31,14 +68,14 @@ body,
 
 .mainBody .CV {
   margin-top: 10px;
-  width: 450px;
-  height: 500px;
+  width: 500px;
+  height: 650px;
   background-color: white;
   color: black;
   display: flex;
   flex-flow: column;
   align-content: center;
-  padding: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 /* ---------------- name */
@@ -47,12 +84,16 @@ body,
   align-items: center; justify-content: center;
   text-align: center;
   height: 35px;
-  font-size: 20px;
+  font-size: 30px;
   margin-top: 30px;
-  background-color: #282c34;
+  font-weight: 600;
 }
 
 /*--------- personal data */
+.DIV-personal-data {
+  background-color: #1d61eb;
+}
+
 .personal-data {
   font-size: 10px;
   height: 40px;
@@ -61,6 +102,175 @@ body,
   gap: 10px;
   align-items: center;
   text-align: center;
+  border-bottom: 1px solid silver;
+}
+
+/* -------------------- SKILLS and EXPERIENCE */
+.DIV-skills-and-experience{
+  height: 100%;
+  display: flex;
+}
+
+.DIV-skills-and-experience .skills{
+  min-width: 20%;
+  max-width: 20%;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  gap: 3px; padding-top: 15px;
+  background-color: rgb(224, 224, 224);
+}
+
+.DIV-skills-and-experience .experience{
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  padding-top: 15px;
+}
+
+/* SKILLS */
+.skills-and-experience-TITLE {
+  font-weight: 800;
+  margin-bottom: 3px;
+}
+
+.singleSkill{
+  width: 80%;
+  font-size: 13px;
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+  align-items: center;
+  position: relative;
+}
+
+.singleSkill .bar {
+  display: flex;
+  height: var(--bar-height);
+  width: 100%;
+  border-radius: 10px;
+  background-color: rgb(138, 138, 138);
+  border: 1px solid black;
+}
+
+.bar .Beginner {
+  border-radius: 10px;
+  width: 20%;
+  height: var(--bar-height);
+  background-color: var(--bar-color);
+}
+
+.bar .Intermediate {
+  border-radius: 10px;
+  width: 50%;
+  height: var(--bar-height);
+  background-color: var(--bar-color);
+}
+
+.bar .Advanced {
+  border-radius: 10px;
+  width: 75%;
+  height: var(--bar-height);
+  background-color: var(--bar-color);
+}
+
+.bar .Expert {
+  border-radius: 10px;
+  width: 100%;
+  height: var(--bar-height);
+  background-color: var(--bar-color);
+}
+
+/* Skills FORM */
+.DIV-skillsForm {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  display: none;
+  width: 100%; min-height: 100%;
+  align-items: center; justify-content: center;
+}
+
+#skillsForm {
+  width: 200px;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#submitSkill {
+  position: relative;
+  padding: 10px 18px;
+  border-radius: 5px;
+  background-color: rgb(36, 36, 172);
+  color: white;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.addNewSkill {
+  background-color: #282c34;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100px; height: 25px;
+  display: flex;
+  justify-content: center; align-items: center;
+  cursor: pointer;
+}
+
+#submitSkill:hover {
+  background-color: rgb(53, 53, 126);
+}
+
+/*---------------------------------------------------- Experience form */
+.DIV-experienceForm{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    display: none;
+    width: 100%; height: 100%;
+    align-items: center; justify-content: center;
+    text-align: center;
+}
+
+.DIV-experience {
+  width: 80%;
+}
+
+#experienceForm {
+  width: 200px;
+  height: 350px;
+}
+
+/* Delete SKills */
+.deleteSkill {
+  border: 1px solid black;
+  font-weight: 600;
+  border-radius: 50%;
+  padding: 1px 3px;
+  background-color: rgb(202, 88, 88);
+  right: 0px;
+  top: 0px;
+  position: absolute;
+  font-size: 10px;
+  display: none;
+}
+
+.singleSkill:hover > .deleteSkill {
+  display: flex;
+}
+
+#button-experience {
+  position: relative;
+  padding: 10px 18px;
+  border-radius: 5px;
+  background-color: rgb(36, 36, 172);
+  color: white;
+  font-size: 10px;
+  cursor: pointer;
 }
 
 /* ----------------------------- navbar */
@@ -68,7 +278,12 @@ form {
   display: flex;
   flex-flow: column;
   gap: 15px;
+  background-color: aliceblue;
+  align-items: center; justify-content: center;
+  min-width: 300px;
+  max-width: 300px;
 }
+
 .DIV-input-and-label{
   display: flex;
   flex-flow: column;
@@ -78,15 +293,113 @@ form {
 }
 
 input {
-  height: 20px;
+  height: 30px;
   width: 90%;
   text-align: center;
+  border: 1px solid silver;
+  border-radius: 5px;
 }
 
 .navBar {
   background-color: aliceblue;
-  display: flex;
+  display: none;
+  flex-flow: column;
   align-items: center; justify-content: center;
   min-width: 300px;
   max-width: 300px;
+  min-height: 100%;
+  gap: 15px;
+}
+
+/* ------------ Difficulty list */
+.select-menu{
+  width: 100%;
+}
+
+.select-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*------------------------------- ICONS */
+.icon {
+  width: 14px;
+  height: 14px;
+}
+
+.cell,
+.email,
+.career {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/*
+.cell-icon {
+  color:  green;
+}*/
+
+/*------------------------------- EXPERIENCE VIEW */
+.experiences {
+  width: 90%;
+  display: flex;
+  flex-flow: column;
+  gap: 7.5px;
+}
+
+.experience {
+  display: flex;
+  flex-flow: column ;
+  gap: 18px;
+}
+
+.LI-experience {
+  font-size: 10px;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  gap: 3px;
+  position: relative;
+  padding-left: 8px;
+}
+
+.LI-experience .title-experience {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.LI-experience .experience-DIVS {
+  overflow-wrap: break-word;
+  width: 350px;
+}
+
+.description-experience {
+  text-align: justify;
+}
+
+.years-company {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.effect-line-experience {
+  position: absolute;
+  border-right: 2px solid;
+  border-color: var(--line-experience-color);
+  height: 100%;
+  left: 0px;
+}
+
+.circle-effect {
+  width: 4px;
+  height: 4px;
+  border: 2px solid;
+  border-color: var(--line-experience-color);
+  position: absolute;
+  border-radius: 50%;
+  top: -8px;
+  left: -3px;
 }

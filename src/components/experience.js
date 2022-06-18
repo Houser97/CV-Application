@@ -6,6 +6,7 @@ const Experience = (props) => {
             function iterateYear(item, iterator){
             return(        
             <li className="LI-experience">
+                <span className="effect-line-experience"><div className="circle-effect"></div></span>
                 <div className="title-experience experience-DIVS" key={`${iterator}j`}>{titleActivity[iterator]}</div>
                 <div className="years-company">
                     From 
