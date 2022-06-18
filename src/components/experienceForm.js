@@ -12,21 +12,23 @@ const ExperienceForm = (props) => {
                     <label htmlFor="title">Title</label>
                     <input id="title" name="title" required></input>
                 </div>
-                <div className="DIV-year-experience DIV-experience">
-                    <label htmlFor="year">Starting Year</label>
-                    <input id="year" name="year" required></input>
-                </div>
-                <div className="DIV-year-experience DIV-experience">
-                    <label htmlFor="year2">Ending Year</label>
-                    <input id="year2" name="year2" required></input>
+                <div className="years-section">
+                    <div className="DIV-year-experience DIV-experience">
+                        <label htmlFor="year">Starting Year</label>
+                        <input type="number" min="1900" max={new Date().getFullYear()} id="year" name="year" required></input>
+                    </div>
+                    <div className="DIV-year-experience DIV-experience">
+                        <label htmlFor="year2">Ending Year</label>
+                        <input type="number" min="1900" max={new Date().getFullYear()} id="year2" name="year2" required></input>
+                    </div>
                 </div>
                 <div className="DIV-company-experience DIV-experience">
                     <label htmlFor="company">Company</label>
                     <input id="company" name="company" required></input>
                 </div>
-                <div className="DIV-description-experience DIV-experience">
+                <div className="DIV-description-experience DIV-texarea">
                     <label htmlFor="description">Description</label>
-                    <input id="description" name="description" required></input>
+                    <textarea rows="12" cols="40" required></textarea>
                 </div>
                 <button id="button-experience">Add Experience</button>
             </form>
