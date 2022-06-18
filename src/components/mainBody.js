@@ -23,7 +23,8 @@ const MainBody = (props) => {
                             Experience
                         </div>
                         <ul className="experiences">
-                            <Experience titleActivity ={titleActivity} year = {year} company = {company} description ={description} year2 = {year2} />
+                            <Experience titleActivity ={titleActivity} year = {year} company = {company} description ={description} year2 = {year2} 
+                            deleteExperience = {props.deleteExperience} />
                         </ul>
                     </div>
                 </div>

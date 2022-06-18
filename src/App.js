@@ -37,6 +37,19 @@ class App extends React.Component {
     this.navBarDisplayNot = this.navBarDisplayNot.bind(this);
     this.closeSkillForm = this.closeSkillForm.bind(this);
     this.closeExperienceForm = this.closeExperienceForm.bind(this);
+    this.deleteExperience= this.deleteExperience.bind(this);
+  }
+
+  deleteExperience(e){
+    const id = e.target.id;
+    this.setState({
+      titleActivity: [...this.state.titleActivity.slice(0, id), ...this.state.titleActivity.slice(id+1)],
+      year: [...this.state.year.slice(0, id), ...this.state.year.slice(id+1)],
+      year2: [...this.state.year2.slice(0, id), ...this.state.year2.slice(id+1)],
+      company: [...this.state.company.slice(0, id), ...this.state.company.slice(id+1)],
+      description: [...this.state.description.slice(0, id), ...this.state.description.slice(id+1)],
+    })
+
   }
 
   closeSkillForm(e) {
@@ -167,7 +180,8 @@ class App extends React.Component {
             openExperienceForm = {this.openExperienceForm}/>
             <MainBody name={name} cel={cel} career={career} email={email} 
             skills = {skills} deleteSkill ={this.deleteSkill} difficulty={difficulty}
-            titleActivity ={titleActivity} year = {year} company = {company} description ={description} year2 = {year2}/>
+            titleActivity ={titleActivity} year = {year} company = {company} description ={description} year2 = {year2}
+            deleteExperience = {this.deleteExperience}/>
             <SkillsForm handleSubmitSkill={this.handleSubmitSkill} closeSkillForm = {this.closeSkillForm} />
             <ExperienceForm handleSubmitExperience = {this.handleSubmitExperience} closeExperienceForm = {this.closeExperienceForm} />
           </div>
