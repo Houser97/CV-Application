@@ -12,7 +12,7 @@ const NavBar = (props) => {
                     <input name="career" id="career" value={career} onChange={props.handleChange}></input>
                 </div>
                 <div className="DIV-input-and-label">
-                    <label htmlFor="cel">Celphone number</label>
+                    <label htmlFor="cel">Cell number</label>
                     <input name="cel" id="cel" value={cel} onChange={props.handleChange}></input>
                 </div>
                 <div className="DIV-input-and-label">
