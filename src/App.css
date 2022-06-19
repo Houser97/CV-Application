@@ -6,6 +6,7 @@
   --line-experience-color: #003d83: 
 }
 
+
 h1 {
   text-align: center;
   background-color: #282c34;
@@ -61,7 +62,6 @@ body,
   justify-content: center; align-items: center;
   padding-top: 50px;
   padding-bottom: 50px;
-  
 }
 
 /* -------------------------- CV */
@@ -76,22 +76,46 @@ body,
   flex-flow: column;
   align-content: center;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position: relative;
 }
 
-/* ---------------- name */
+/* ---------------- name and image*/
 .name-user {
   display: flex;
   align-items: center; justify-content: center;
   text-align: center;
-  height: 35px;
+  height: 50px;
   font-size: 30px;
-  margin-top: 30px;
   font-weight: 600;
+  width: 100%;
+}
+
+.image-section {
+  width: 60px;
+  height: 60px;
+  left: 5px;
+  top: 5px;
+  background-color: #fff;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+
+img {
+  width: 100%;
+  border: none;
+  height: 100%;
+  border-radius: 15px;
 }
 
 /*--------- personal data */
 .DIV-personal-data {
   background-color: #1d61eb;
+  height: 150px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .personal-data {
@@ -102,7 +126,6 @@ body,
   gap: 10px;
   align-items: center;
   text-align: center;
-  border-bottom: 1px solid silver;
 }
 
 /* -------------------- SKILLS and EXPERIENCE */
@@ -215,26 +238,30 @@ body,
 }
 
 .addNewSkill {
-  background-color: #282c34;
+  background-color: #1da72f;
   color: white;
-  border: 1px solid black;
+  border-radius: 5px;
   width: 30%; height: 25px;
   display: flex;
   justify-content: center; align-items: center;
   cursor: pointer;
+  height: 40px; width: 100px;
+  font-weight: 600;
 }
 
 .addNewExperience {
-  width: 50%; height: 25px;
-  border: 1px black solid;
+  background-color: #701da7;
+  width: 50%; height: 45px; font-weight: 600;
+  border-radius: 5px;
+  color: white;
   display: flex;
   justify-content: center; align-items: center;
   cursor: pointer;
 }
 
-#submitSkill:hover {
+/*#submitSkill:hover {
   background-color: rgb(87, 134, 196);
-}
+}*/
 
 /*---------------------------------------------------- Experience form */
 .DIV-experienceForm{
@@ -247,17 +274,41 @@ body,
     text-align: center;
 }
 
+
+
 .DIV-experience {
-  width: 80%;
+  width: 40%;
+}
+
+.DIV-texarea{
+  width: 60%;
+  display: flex;
+  flex-flow: column;
+}
+
+textarea{
+  justify-self: center;
+  max-width: 100%;
+  max-height: 200px;
+    border: 1px solid silver;
+  border-radius: 5px;
 }
 
 #experienceForm {
-  width: 300px;
-  height: 450px;
+  width: 600px;
+  height: 550px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   position: relative;
 }
+
+.years-section {
+  display: flex;
+  align-items: center; justify-content: center;
+  width: 100%;
+}
+
+
 
 /* Delete SKills */
 .deleteSkill {
@@ -302,7 +353,18 @@ body,
   cursor: pointer;
 }
 
-.LI-experience:hover .delete-experience-button{
+.edit-experience-button{
+  height: 15px;
+  width: 15px;
+  right: 40px;
+  top: 0px;
+  position: absolute;
+  display: none;
+  cursor: pointer;
+}
+
+.LI-experience:hover .delete-experience-button,
+.LI-experience:hover .edit-experience-button{
   display: flex;
 }
 
@@ -322,6 +384,16 @@ body,
   cursor: pointer;
   font-weight: 600;
   font-size: 14px;
+}
+/* ----------------- Edit experience */
+.DIV-experienceEditForm{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  display: none;
+  width: 100%; height: 100%;
+  align-items: center; justify-content: center;
+  text-align: center;
 }
 
 /* ----------------------------- navbar */
@@ -361,6 +433,13 @@ input {
   padding: 20px;
   padding-top: 50px;
   transition: all 0.3s ease-in-out;
+}
+
+#form-navbar {
+  display: flex;
+  flex-flow: column;
+  height: 500px;
+  gap: 35px;
 }
 
 /* ------------ Difficulty list */

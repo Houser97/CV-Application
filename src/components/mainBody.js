@@ -1,6 +1,7 @@
 import PersonalData from './personalData';
 import Skills from './skills';
 import Experience from './experience';
+/*import Cocco from './Cocco.jpg'*/
 
 const MainBody = (props) => {
     const {name, career, cel, email, skills, difficulty,titleActivity, year, year2, company, description } = props;
@@ -8,6 +9,8 @@ const MainBody = (props) => {
         <div className="mainBody">
             <div className="CV">
                 <div className='DIV-personal-data'>
+                
+                {/*<div className="image-section"><img alt='Cocco' src={Cocco}></img></div>*/}
                     <div className="name-user">{name}</div>
                     <PersonalData career={career} cel={cel} email={email} />
                 </div>

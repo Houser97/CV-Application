@@ -4,6 +4,7 @@ import NavBar from './components/navbar';
 import MainBody from './components/mainBody';
 import SkillsForm from './components/skillsForm';
 import ExperienceForm from './components/experienceForm';
+import EditExperienceForm from './components/editExperience';
 import './App.css';
 
 class App extends React.Component {
@@ -11,10 +12,10 @@ class App extends React.Component {
     super(props);
     this.state = {
       title: 'CV Application',
-      name: "",
-      career:"",
-      cel:"",
-      email:"",
+      name: "John Doe",
+      career:"Master in John Doe",
+      cel:"555-555-5555",
+      email:"johnDoe@gmail.com",
       skills: [],
       difficulty: [],
       titleActivity: [],
@@ -22,6 +23,7 @@ class App extends React.Component {
       year2: [],
       company: [],
       description: [],
+      currentId: "",
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -38,6 +40,69 @@ class App extends React.Component {
     this.closeSkillForm = this.closeSkillForm.bind(this);
     this.closeExperienceForm = this.closeExperienceForm.bind(this);
     this.deleteExperience= this.deleteExperience.bind(this);
+    this.openEditExperienceForm = this.openEditExperienceForm.bind(this);
+    this.handleSubmitExperienceEdit = this.handleSubmitExperienceEdit.bind(this);
+    this.closeEditExperienceForm = this.closeEditExperienceForm.bind(this);
+  }
+
+  closeEditExperienceForm(e){
+    const experienceForm = document.querySelector(".DIV-experienceEditForm");
+    experienceForm.style.display = "none"
+  }
+
+  handleSubmitExperienceEdit(e){
+    e.preventDefault();
+    const title = [...e.target][0].value;
+    const year = [...e.target][1].value;
+    const year2 = [...e.target][2].value;
+    const company = [...e.target][3].value;
+    const description = [...e.target][4].value;
+
+    let currentTitleArray = this.state.titleActivity;
+    let currentYearArray = this.state.year;
+    let currentYear2Array = this.state.year2;
+    let currentCompanyArray = this.state.company;
+    let currentDescriptionArray = this.state.description;
+
+    currentTitleArray[this.state.currentId] = title;
+    currentYearArray[this.state.currentId] = year;
+    currentYear2Array[this.state.currentId] = year2;
+    currentCompanyArray[this.state.currentId] = company;
+    currentDescriptionArray[this.state.currentId] = description;
+
+
+    this.setState({
+      titleActivity: [...currentTitleArray],
+      year: [...currentYearArray],
+      year2: [...currentYear2Array],
+      company: [...currentCompanyArray],
+      description: [...currentDescriptionArray]
+    })
+    e.target.reset();
+    const DIVform = document.querySelector(".DIV-experienceEditForm");
+    DIVform.style.display = "none";
+  }
+
+  openEditExperienceForm(e){
+    let id = parseInt(e.target.id);
+    const editForm = document.querySelector(".DIV-experienceEditForm");
+    editForm.style.display = "flex";
+    let title = document.getElementById("titleEdit");
+    let year = document.getElementById("yearEdit");
+    let year2 = document.getElementById("year2Edit");
+    let company = document.getElementById("companyEdit");
+    let description = document.getElementById("descriptionEdit");
+
+    title.value = this.state.titleActivity[id];
+    year.value = this.state.year[id];
+    year2.value = this.state.year2[id];
+    company.value = this.state.company[id];
+    description.value = this.state.description[id];
+
+    this.setState({
+      currentId: id,
+    })
+
   }
 
   deleteExperience(e){
@@ -72,7 +137,6 @@ class App extends React.Component {
     closeNavbar.style.display = "flex"
     const formNavBar = document.getElementById("form-navbar");
     formNavBar.style.display = "flex"
-    console.log("click")
   }
 
   navBarDisplayNot(e){
@@ -102,7 +166,6 @@ class App extends React.Component {
       year2: this.state.year2.concat(year2)
     })
     e.target.reset();
-    console.log(this.state.titleActivity)
     const DIVform = document.querySelector(".DIV-experienceForm");
     DIVform.style.display = "none";
   }
@@ -121,7 +184,6 @@ class App extends React.Component {
     this.setState({
       difficulty: this.state.difficulty.concat(e.target.value)
     })
-    console.log(e.target.value)
   }
 
   deleteSkill(e){
@@ -145,14 +207,12 @@ class App extends React.Component {
       }
     )
     e.target.value = "";
-    console.log("changeSkill");
   }
 
   handleSubmitSkill(e){
     e.preventDefault();
     const difficulty = [...e.target][1].value;
     const skill = [...e.target][0].value;
-    console.log(skill)
     this.setState({
       skills: this.state.skills.concat(skill),
       difficulty: this.state.difficulty.concat(difficulty)
@@ -181,9 +241,10 @@ class App extends React.Component {
             <MainBody name={name} cel={cel} career={career} email={email} 
             skills = {skills} deleteSkill ={this.deleteSkill} difficulty={difficulty}
             titleActivity ={titleActivity} year = {year} company = {company} description ={description} year2 = {year2}
-            deleteExperience = {this.deleteExperience}/>
+            deleteExperience = {this.deleteExperience} openEditExperienceForm = {this.openEditExperienceForm}/>
             <SkillsForm handleSubmitSkill={this.handleSubmitSkill} closeSkillForm = {this.closeSkillForm} />
             <ExperienceForm handleSubmitExperience = {this.handleSubmitExperience} closeExperienceForm = {this.closeExperienceForm} />
+            <EditExperienceForm handleSubmitExperienceEdit = {this.handleSubmitExperienceEdit} closeEditExperienceForm = {this.closeEditExperienceForm} />
           </div>
         </div>  
       </div>

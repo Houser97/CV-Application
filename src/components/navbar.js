@@ -5,7 +5,7 @@ const NavBar = (props) => {
             <form onSubmit={props.handleSubmit} id="form-navbar">
                 <div className="DIV-input-and-label">
                     <label htmlFor="name">Name</label>
-                    <input name="name" id="name" value={name} onChange={props.handleChange}></input>
+                    <input maxLength="32" name="name" id="name" value={name} onChange={props.handleChange}></input>
                 </div>
                 <div className="DIV-input-and-label">
                     <label htmlFor="career">Career</label>
