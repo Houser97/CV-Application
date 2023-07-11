@@ -28,3 +28,18 @@ export const NAV_ITEMS = [
         svg: 'link-external'
     },
 ]
+
+export const HOME_INFORMATION = [
+    {
+        data: 'Puebla',
+        svg: 'map'
+    },
+    {
+        data: 'arturo.riverar97@gmail.com',
+        svg: 'envelope'
+    },
+    {
+        data: '222-333-3798',
+        svg: 'phone'
+    },
+]
