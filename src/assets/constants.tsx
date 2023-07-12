@@ -43,3 +43,14 @@ export const HOME_INFORMATION = [
         svg: 'phone'
     },
 ]
+
+export const SOCIAL = [
+    {
+        social: '@Houser97',
+        svg: 'github'
+    },
+    {
+        social: '@ArturoRivera',
+        svg: 'linkedin-square'
+    },
+]
