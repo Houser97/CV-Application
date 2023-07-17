@@ -15,7 +15,7 @@ const Navbar = () => {
                 {NAV_ITEMS.map(({item, svg}, index) => {
                     return(
                         <li className="nav__item nav__icon" key={`nav-item-${index}`} onClick={() => setShowMenu(false)}>
-                            <a href="#" className="nav__link">
+                            <a href={`#${item}`} className="nav__link">
                                 <i className={`bx bx-${svg}`}></i> {item}
                             </a>
                         </li>
