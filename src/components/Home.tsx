@@ -13,7 +13,7 @@ const Home = () => {
                 <h3 className="home__profession">Full-Stack Developer</h3>
 
                 <div>
-                    <a href="" className="home__button-movil"></a>
+                    <a href="" className="home__button-movil">Download</a>
                 </div>
             </div>
 
