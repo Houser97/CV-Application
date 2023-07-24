@@ -1,8 +1,13 @@
 import '../styles/Resume.css'
+import ResumeLeft from './Resume/ResumeLeft'
+import ResumeRight from './Resume/ResumeRight'
 
 const Resume = () => {
   return (
-    <div className='home'>Resume</div>
+    <div className='resume'>
+      <ResumeLeft />
+      <ResumeRight />
+    </div>
   )
 }
 
