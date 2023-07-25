@@ -54,3 +54,22 @@ export const SOCIAL = [
         svg: 'linkedin-square'
     },
 ]
+
+export const INTERESTS = [
+    {
+        interest: 'Music',
+        svg: 'bx-headphone'
+    },
+    {
+        interest: 'Travel',
+        svg: 'bxs-plane-alt'
+    },
+    {
+        interest: 'Read',
+        svg: 'bx-book'
+    },
+    {
+        interest: 'Fitness',
+        svg: 'bx-dumbbell'
+    },
+]
