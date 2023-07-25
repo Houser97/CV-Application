@@ -7,10 +7,10 @@ const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false)
 
   return (
-    <nav className='navbar'>
+    <nav className='navbar bd__container'>
         <a href="#" className="nav__logo">Arturo</a>
 
-        <div className={`nav__menu navbar-main ${showMenu ? 'show-menu' : ""}`}>
+        <div className={`nav__menu ${showMenu ? 'show-menu' : ""}`}>
             <ul className="nav__list">
                 {NAV_ITEMS.map(({item, svg}, index) => {
                     return(
