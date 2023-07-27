@@ -1,4 +1,3 @@
-import '../../styles/Resume/ResumeLeft.css'
 import Education from '../Education'
 import Home from '../Home'
 import Profile from '../Profile'
